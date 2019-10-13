@@ -7,20 +7,6 @@
 		<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>CreditCard-Home Page</title>
-		<style type="text/css">
-			.error {
-				color: red;
-			}
-			table {
-				width: 50%;
-				border-collapse: collapse;
-				border-spacing: 0px;
-			}
-			table td {
-				border: 1px solid #565454;
-				padding: 20px;
-			}
-		</style>
 	</head>
 	<body>
 		<h1>Check for Credit Card Eligibility</h1>

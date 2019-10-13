@@ -1,4 +1,4 @@
-package com.howtodoinjava.demo.spring.model;
+package com.myapp.check_credit_score.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "TBL_CARDS")
 public class Cards {
-
-   @Id
-   @GeneratedValue
+	
+	
+	@Id
+	@GeneratedValue
    @Column(name = "PAN_NUMBER")
    private String panNumber;
 

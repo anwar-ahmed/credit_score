@@ -1,36 +1,30 @@
-package com.howtodoinjava.demo.spring.controller;
+package com.myapp.check_credit_score.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.howtodoinjava.demo.spring.model.Cards;
+import com.myapp.check_credit_score.model.Cards;
 
 import org.springframework.ui.ModelMap;
-import com.howtodoinjava.demo.spring.service.CardsService;
+import com.myapp.check_credit_score.service.CardsService;
 
 
 @Controller
-public class CardsController {
+public class CheckCreditScoreController {
+	    
 	
+	 	@Autowired
 	    private CardsService cardsService;
-	    
-	    
-	    @Autowired(required=true)
-		@Qualifier(value="cardsService")
-	    
-	    public void setCardsService(CardsService cs){
-			this.cardsService = cs;
-		}
+    
 
 	   @RequestMapping(value = "/", method = RequestMethod.GET)
 	   public ModelAndView index() {
-	      return new ModelAndView("index", "command", new Cards());
+	      return new ModelAndView("Index", "command", new Cards());
 	   }
 	   
 	   @RequestMapping(value = "/checkEligibility", method = RequestMethod.POST)
@@ -38,6 +32,8 @@ public class CardsController {
 	   ModelMap model) {
 		   
 		   Cards c = new Cards();
+		   
+		   System.out.println("inside controller" + card.getPanNumber());
 		   
 		   c = this.cardsService.findPanNumber(card.getPanNumber());
 		   
